@@ -5,6 +5,7 @@ import LogIn from "./pages/Login"
 import Rents from "./pages/Rents/Rents"
 import RentRegister from "./components/Rents Components/RentRegister"
 import { useEffect } from "react"
+import UpdateRents from "./pages/Rents/UpdateRents"
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/rents" element={<Rents />} />
         <Route path="/rentsregister" element={<RentRegister />} />
+        <Route path="/updaterents/:id" element={<UpdateRents />} />
       </Routes>
     </SideNav>
     :
