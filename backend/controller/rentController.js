@@ -86,12 +86,23 @@ const DeleteRent = async (req, res) => {
 
 // update Rent Data
 const UpdateRents = async (req, res) => {
-    const putRents = await rentModel.updateOne(
+    const putRents = await rentModel.updateMany(
         {_id: req.params.id},
-        {$set: req.body}
+        {$set: [
+            req.body.sn,
+            req.body.siteName,
+            req.body.district,
+            req.body.landlordName,
+            req.body.phone,
+            req.body.startDate,
+            req.body.endDate,
+            req.body.sitePost,
+            req.body.rentCost,
+            req.body.file
+        ]}
     )
     if(putRents){
-        res.send("Update success")
+        res.send(putRents)
     }
 }
 
